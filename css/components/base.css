@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+    font-family: 'Cardo', serif;
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+a {
+    color: var(--brandPrimary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--brandPrimaryDarken);
+}
+
+a:focus {
+
+}
+
+a:visited {
+
+}

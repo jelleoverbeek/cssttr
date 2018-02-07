@@ -1,0 +1,10 @@
+:root {
+    --brandPrimary: #BF8E22;
+    --brandPrimaryDarken: #a57821;
+    --textPrimary: #000000;
+    --textSecondary: #8D8D8D;
+    --borderColor: #F0F0F0;
+    --borderRadius: 3px;
+    --columnWidth: 3.5rem; /* 56px */
+    --gutterWidth: 2rem; /* 32px */
+}

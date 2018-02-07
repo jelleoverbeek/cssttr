@@ -1,0 +1,30 @@
+nav {
+    display: flex;
+    border-bottom: 1px solid var(--borderColor);
+}
+
+nav h1 {
+    font-size: 1.5rem;
+    grid-column: span 6;
+}
+
+nav ul {
+    grid-column: span 6;
+    margin-left: auto;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    padding-left: 2rem;
+}
+
+ul li > ul {
+    display: none;
+    flex-direction: column;
+}

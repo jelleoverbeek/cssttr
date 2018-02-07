@@ -1,0 +1,17 @@
+/* Color settings, font settings */
+@import "components/variables.css";
+
+/* Common css styles */
+@import "components/base.css";
+
+/* Grid */
+@import "components/grid.css";
+
+/* Other components */
+@import "components/chat.css";
+@import "components/login.css";
+@import "components/media-item.css";
+@import "components/navigation.css";
+@import "components/picture-with-subtitle.css";
+@import "components/rating.css";
+@import "components/step-indicator.css";

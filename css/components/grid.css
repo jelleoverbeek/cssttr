@@ -1,0 +1,7 @@
+section {
+    display: grid;
+    grid-template-columns: repeat(12, var(--columnWidth));
+    grid-gap: var(--gutterWidth);
+    max-width: 64rem;
+    margin: auto;
+}
