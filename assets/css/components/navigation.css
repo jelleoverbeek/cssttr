@@ -1,7 +1,6 @@
 nav {
     display: flex;
     border-bottom: 1px solid var(--borderColor);
-    height: 3.5rem;
 }
 
 nav h2 {
@@ -21,12 +20,35 @@ ul {
     padding-left: 0;
 }
 
+nav section > ul:focus-within {
+    box-shadow: 0 0 0 100vw rgba(0,0,0,0.3);
+    z-index: 900;
+}
+
 ul li {
     position: relative;
+}
+
+ul li a {
     margin-left: 2rem;
-    height: 3rem;
+    height: 3.5rem;
     display: flex;
     align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: ease-in-out 0.1s all;
+}
+
+ul li a:hover. ul li a:focus {
+    border-color: var(--brandPrimary);
+}
+
+nav section > ul > li:last-child a {
+    background-color: var(--brandPrimary);
+    color: #ffffff;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
 }
 
 ul li:hover ul, li:focus-within ul {
@@ -37,23 +59,22 @@ ul li ul {
     display: none;
     position: absolute;
     background-color: #ffffff;
-    box-shadow: 0 0.1875rem 0.25rem 0 rgba(0,0,0,0.03);
-
+    box-shadow: var(--focusShadow);
     flex-direction: column;
     align-items: flex-start;
+
     border: 1px solid var(--borderColor);
+    border-bottom-left-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+
     border-top: none;
-    top: 3.125rem;
-    left: -1rem;
-    padding: 0.5rem 1rem;
+    top: 3.5rem;
+    left: 0.5rem;
+    padding: 0.5rem 1.5rem 1rem 1.5rem;
 }
 
-ul li ul li {
+ul li ul li a {
     height: auto;
     margin-left: 0;
     padding: 0.5rem 0;
-}
-
-ul li ul li:first-child {
-    padding-top: 0;
 }

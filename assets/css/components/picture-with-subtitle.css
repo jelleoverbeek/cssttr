@@ -12,3 +12,7 @@ article p {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
+
+article:focus-within {
+    border-color: var(--brandPrimary);
+}

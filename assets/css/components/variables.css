@@ -5,6 +5,7 @@
     --textSecondary: #8D8D8D;
     --borderColor: #F0F0F0;
     --borderRadius: 3px;
+    --focusShadow: 0 0.1875rem 0.25rem 0 rgba(0,0,0,0.03);
     --columnWidth: 3.5rem; /* 56px */
     --gutterWidth: 2rem; /* 32px */
 }
