@@ -1,5 +1,6 @@
 /* Color settings, font settings */
 @import "components/variables.css";
+@import "components/fonts.css";
 
 /* Common css styles */
 @import "components/base.css";

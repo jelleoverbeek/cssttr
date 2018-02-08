@@ -1,0 +1,7 @@
+@font-face {
+    font-family: Ampersand;
+    src: url('../../fonts/SpectralSC-SemiBold.ttf') format("truetype"),
+        local('Baskerville'),
+        local('Goudy Old Style');
+    unicode-range: U+26;
+}

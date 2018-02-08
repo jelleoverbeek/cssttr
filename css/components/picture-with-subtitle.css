@@ -1,8 +1,0 @@
-article {
-    grid-column: span 4;
-}
-
-article h1 {
-    font-size: 1.25rem;
-    text-align: center;
-}
