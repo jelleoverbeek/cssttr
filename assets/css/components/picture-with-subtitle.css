@@ -1,5 +1,6 @@
 article {
     grid-column: span 4;
+    border-radius: var(--borderRadius);
     border: 1px solid var(--borderColor);
     padding: 1.5rem 2.5rem;
 }

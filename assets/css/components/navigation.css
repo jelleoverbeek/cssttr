@@ -4,17 +4,14 @@ nav {
     height: 3.5rem;
 }
 
-nav section > * {
-    align-self: center;
-}
-
 nav h2 {
     grid-column: span 6;
+    align-self: center;
 }
 
 nav ul {
     grid-column: span 6;
-    margin-left: auto;
+    margin: 0 0 0 auto;
 }
 
 ul {
@@ -25,10 +22,38 @@ ul {
 }
 
 ul li {
-    padding-left: 2rem;
+    position: relative;
+    margin-left: 2rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
 }
 
-ul li > ul {
+ul li:hover ul, li:focus-within ul {
+    display: flex;
+}
+
+ul li ul {
     display: none;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0 0.1875rem 0.25rem 0 rgba(0,0,0,0.03);
+
     flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid var(--borderColor);
+    border-top: none;
+    top: 3.125rem;
+    left: -1rem;
+    padding: 0.5rem 1rem;
+}
+
+ul li ul li {
+    height: auto;
+    margin-left: 0;
+    padding: 0.5rem 0;
+}
+
+ul li ul li:first-child {
+    padding-top: 0;
 }
