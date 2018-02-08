@@ -1,11 +1,17 @@
 article {
-    grid-column: span 4;
     border-radius: var(--borderRadius);
     border: 1px solid var(--borderColor);
     padding: 1.5rem 2.5rem;
+    text-align: center;
+}
+
+article img {
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 article p {
+    text-align: left;
     height: 5rem;
     overflow: hidden;
     display: -webkit-box;
@@ -15,4 +21,6 @@ article p {
 
 article:focus-within {
     border-color: var(--brandPrimary);
+    box-shadow: 0 2px 15px 0 rgba(0,0,0,0.05);
 }
+

@@ -4,13 +4,16 @@ nav {
 }
 
 nav h2 {
-    grid-column: span 6;
     align-self: center;
 }
 
 nav ul {
-    grid-column: span 6;
     margin: 0 0 0 auto;
+}
+
+nav section {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
 }
 
 ul {
@@ -27,10 +30,10 @@ nav section > ul:focus-within {
 
 ul li {
     position: relative;
+    margin-left: 2rem;
 }
 
 ul li a {
-    margin-left: 2rem;
     height: 3.5rem;
     display: flex;
     align-items: center;
@@ -38,7 +41,15 @@ ul li a {
     transition: ease-in-out 0.1s all;
 }
 
-ul li a:hover. ul li a:focus {
+ul li:first-child {
+    margin-left: 0;
+}
+
+ul li a[aria-label="Home, current page"] {
+    border-bottom: 2px solid var(--brandPrimary);
+}
+
+ul li a:hover, ul li a:focus {
     border-color: var(--brandPrimary);
 }
 
