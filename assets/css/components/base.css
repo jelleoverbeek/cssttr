@@ -55,7 +55,7 @@ a:hover {
 }
 
 a:focus {
-
+    outline: 0;
 }
 
 a:visited {

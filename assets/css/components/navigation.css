@@ -50,7 +50,7 @@ ul li a[aria-label="Home, current page"] {
 }
 
 ul li a:hover, ul li a:focus {
-    border-color: var(--brandPrimary);
+    border-color: var(--brandPrimaryLight);
 }
 
 nav section > ul > li:last-child a {
@@ -61,6 +61,12 @@ nav section > ul > li:last-child a {
     align-items: center;
     padding: 0 1rem;
 }
+
+
+nav section > ul > li:last-child a:focus {
+    background-color: var(--brandPrimaryDarken);
+}
+
 
 ul li:hover ul, li:focus-within ul {
     display: flex;
@@ -80,12 +86,17 @@ ul li ul {
 
     border-top: none;
     top: 3.5rem;
-    left: 0.5rem;
+    left: -1.5rem;
     padding: 0.5rem 1.5rem 1rem 1.5rem;
+}
+
+ul li ul li {
+    margin-left: 0;
+    width: 100%;
 }
 
 ul li ul li a {
     height: auto;
-    margin-left: 0;
+    width: 100%;
     padding: 0.5rem 0;
 }

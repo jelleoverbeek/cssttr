@@ -1,5 +1,6 @@
 :root {
     --brandPrimary: #BF8E22;
+    --brandPrimaryLight: rgba(165, 120, 33, 0.4);
     --brandPrimaryDarken: #a57821;
     --textPrimary: #000000;
     --textSecondary: #8D8D8D;
