@@ -1,19 +1,14 @@
-div {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-}
-
 div form {
     width: 30rem;
     background-color: #ffffff;
     padding: 4rem;
-    margin: 0 auto;
-    margin-top: 10rem;
     border-radius: var(--borderRadius);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 100vw rgba(0,0,0,0.3);
 
     display: grid;
     grid-template-columns: 1fr 1fr;
