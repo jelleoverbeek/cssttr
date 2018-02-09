@@ -8,6 +8,12 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    transition: 0.2s ease-in-out filter;
+}
+
+[aria-label="blurred"] {
+    filter: blur(5px);
 }
 
 h1 {

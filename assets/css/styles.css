@@ -4,6 +4,7 @@
 
 /* Common css styles */
 @import "components/base.css";
+@import "components/forms.css";
 
 /* Grid */
 @import "components/grid.css";

@@ -1,0 +1,43 @@
+div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+
+div form {
+    width: 30rem;
+    background-color: #ffffff;
+    padding: 4rem;
+    margin: 0 auto;
+    margin-top: 10rem;
+    border-radius: var(--borderRadius);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.8rem;
+}
+
+div label, div input {
+    grid-column: span 2;
+}
+
+div input[type="checkbox"] {
+    grid-column: 1 / -1;
+}
+
+
+div input[type="checkbox"] + label {
+    grid-column: 1 / -1;
+}
+
+div a {
+    text-align: right;
+}
+
+div button {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+}
