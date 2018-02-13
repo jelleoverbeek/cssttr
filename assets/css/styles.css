@@ -171,13 +171,6 @@ form {
     grid-gap: 0.8rem;
 }
 
-@media all and (min-width: 49.125rem /* 786px */) {
-    form {
-        max-width: 30rem;
-        padding: 2rem 4rem;
-    }
-}
-
 div form {
     position: absolute;
     top: 50%;
@@ -185,8 +178,19 @@ div form {
     transform: translate(-50%, -50%);
     box-shadow: 0 0 0 100vw rgba(0,0,0,0.3);
     width: 30rem;
+    padding: 2rem;
 }
 
+@media all and (min-width: 49.125rem /* 786px */) {
+    form {
+        max-width: 30rem;
+        padding: 2rem 4rem;
+    }
+
+    div form {
+        padding: 4rem;
+    }
+}
 
 form label, form input {
     grid-column: span 2;
