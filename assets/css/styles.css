@@ -35,12 +35,7 @@ body {
     font-family: var(--fontPrimary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
     transition: var(--animationSettings);
-}
-
-[aria-label="blurred"] {
-    filter: blur(5px);
 }
 
 h1 {
@@ -64,7 +59,6 @@ h3 {
     text-align: center;
     text-transform: uppercase;
 }
-
 
 p {
     color: var(--textSecondary);
@@ -93,27 +87,35 @@ ul {
     list-style: none;
 }
 
+[aria-label="blurred"] {
+    filter: blur(5px);
+}
+
 /* Form styles */
 
 label {
     font-weight: 600;
 }
 
-input[type="text"], input[type="password"], input[type="email"] {
+input[type="text"],
+input[type="password"],
+input[type="email"] {
     height: 2.6rem;
     padding: 0 0.5rem;
     font-size: 1rem;
-    /*box-shadow: none;*/
     border: 1px solid rgb(80%, 80%, 80%);
     border-radius: var(--borderRadius);
 }
 
-input:focus {
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
     border: 1px solid var(--brandPrimary);
     outline: 0;
 }
 
-input[type="submit"], button {
+input[type="submit"],
+button {
     height: 3rem;
     border: 0;
     border-radius: var(--borderRadius);
@@ -124,7 +126,8 @@ input[type="submit"], button {
     background-color: var(--brandPrimary);
 }
 
-input[type="submit"]:hover, button:hover {
+input[type="submit"]:hover,
+button:hover {
     background-color: var(--brandPrimaryDarken);
 }
 
@@ -295,7 +298,7 @@ ul li ul li a {
 
 /* Media-item */
 
-article {
+section article {
     border-radius: var(--borderRadius);
     border: 1px solid var(--borderColor);
     padding: 1.5rem 2.5rem;
@@ -308,7 +311,7 @@ article img {
     margin: 0 auto;
 }
 
-article p {
+section article p {
     text-align: left;
     height: 5rem;
     overflow: hidden;
@@ -317,7 +320,7 @@ article p {
     -webkit-box-orient: vertical;
 }
 
-article:focus-within {
+section article:focus-within {
     border-color: var(--brandPrimary);
     box-shadow: 0 2px 15px 0 rgba(0,0,0,0.05);
     transform: scale(1.025);
@@ -325,17 +328,81 @@ article:focus-within {
 
 /* picture with subtitle */
 
-figure {
-    max-width: max-content;
+article {
+    max-width: 53rem;
+    padding: 1.5rem;
     margin: 0 auto;
 }
 
+article h1 {
+    text-align: left;
+    font-size: 3rem;
+}
+
+figure {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
 figure img {
-    width: 25rem;
+    min-width: 20rem;
+    margin-right: 2rem;
+}
+
+article footer a {
+    display: flex;
+    border: 1px solid rgba(191,142,34,0.25);
+    justify-content: center;
+    padding: .5rem;
+    border-radius: var(--borderRadius);
+    margin-top: 2rem;
+    transition: all ease-in-out .2s;
+    width: 18rem;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+article footer a:hover, article footer a:focus {
+    background: rgba(191,142,34,0.05);
+    border: 1px solid rgba(191,142,34,1);
+    animation-name: bounce;
+    animation-duration: .3s;
+}
+
+article footer a:active {
+    background: rgba(191,142,34,0.2);
+    border: 1px solid rgba(191,142,34,1);
+}
+
+article footer a::before {
+    width: 1.5rem;
+    height: 1.5rem;
+    content: "";
+    background-image: url("../img/shopping-cart.svg");
+    margin-right: .25rem;
+    transition: var(--animationSettings);
+}
+
+article span {
+    display: flex;
+    font-size: 2.5rem;
+    color: var(--brandPrimary);
+    font-family: var(--fontSecondary);
     margin: 1rem 0;
 }
 
-article figcaption {
+figcaption {
     width: 100%;
 }
 
