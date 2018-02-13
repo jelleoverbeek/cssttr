@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: Ampersand;
-    src: url('../../fonts/SpectralSC-SemiBold.ttf') format("truetype"),
+    src: url('../fonts/SpectralSC-SemiBold.ttf') format("truetype"),
     local('Baskerville'),
     local('Goudy Old Style');
     unicode-range: U+26;
@@ -35,7 +35,6 @@ body {
     font-family: var(--fontPrimary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: var(--animationSettings);
 }
 
 h1 {
@@ -77,6 +76,7 @@ a:hover {
 
 a:focus {
     outline: 0;
+    text-decoration: underline;
 }
 
 a:visited {
@@ -137,17 +137,18 @@ section {
     max-width: 64rem;
     margin: auto;
     padding: 0 2rem;
+    display: grid;
+    grid-gap: var(--gutterWidth);
+    grid-template-columns: 1fr;
 }
 
 @media all and (min-width: 49.125rem /* 786px */) {
     section {
-        display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: var(--gutterWidth);
     }
 }
 
-@media all and (min-width: 80rem /* 1280px */) {
+@media all and (min-width: 70rem /* 1280px */) {
     section {
         grid-template-columns: 1fr 1fr 1fr;
     }
@@ -158,41 +159,53 @@ section {
 
 /* login */
 
-div form {
-    width: 30rem;
+form {
+    max-width: 100%;
+    margin: 0 auto;
     background-color: #ffffff;
-    padding: 4rem;
+    padding: 1rem 2rem;
     border-radius: var(--borderRadius);
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 0 100vw rgba(0,0,0,0.3);
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0.8rem;
 }
 
-div label, div input {
+@media all and (min-width: 49.125rem /* 786px */) {
+    form {
+        max-width: 30rem;
+        padding: 2rem 4rem;
+    }
+}
+
+div form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 100vw rgba(0,0,0,0.3);
+    width: 30rem;
+}
+
+
+form label, form input {
     grid-column: span 2;
 }
 
-div input[type="checkbox"] {
+form input[type="checkbox"] {
     grid-column: 1 / -1;
 }
 
 
-div input[type="checkbox"] + label {
+form input[type="checkbox"] + label {
     grid-column: 1 / -1;
 }
 
-div a {
+form a {
     text-align: right;
 }
 
-div button {
+form button {
     grid-column: 1 / -1;
     margin-top: 1rem;
 }
@@ -248,6 +261,7 @@ ul li a[aria-label="Home, current page"] {
 
 ul li a:hover, ul li a:focus {
     border-color: var(--brandPrimaryLight);
+    text-decoration: none;
 }
 
 nav section > ul > li:last-child a {
@@ -320,6 +334,10 @@ section article p {
     -webkit-box-orient: vertical;
 }
 
+section article a:focus {
+    text-decoration: none;
+}
+
 section article:focus-within {
     border-color: var(--brandPrimary);
     box-shadow: 0 2px 15px 0 rgba(0,0,0,0.05);
@@ -339,6 +357,14 @@ article h1 {
     font-size: 3rem;
 }
 
+article span {
+    display: flex;
+    font-size: 2.5rem;
+    color: var(--brandPrimary);
+    font-family: var(--fontSecondary);
+    margin: 1rem 0;
+}
+
 figure {
     margin: 0 auto;
     display: flex;
@@ -346,9 +372,10 @@ figure {
 }
 
 figure img {
-    min-width: 20rem;
+    width: 40%;
     margin-right: 2rem;
 }
+
 
 article footer a {
     display: flex;
@@ -378,6 +405,7 @@ article footer a:hover, article footer a:focus {
     border: 1px solid rgba(191,142,34,1);
     animation-name: bounce;
     animation-duration: .3s;
+    text-decoration: none;
 }
 
 article footer a:active {
@@ -394,18 +422,99 @@ article footer a::before {
     transition: var(--animationSettings);
 }
 
-article span {
-    display: flex;
-    font-size: 2.5rem;
-    color: var(--brandPrimary);
-    font-family: var(--fontSecondary);
-    margin: 1rem 0;
+figcaption {
+    width: 60%;
 }
 
-figcaption {
-    width: 100%;
+@media all and (max-width: 49.125rem /* 786px */) {
+    article h1 {
+        font-size: 2.3rem;
+    }
+
+    article span {
+        font-size: 2.3rem;
+    }
+
+    figure {
+        flex-direction: column;
+    }
+
+    figure img {
+        width: auto;
+        max-width: 100%;
+        margin-right: auto;
+    }
+
+    article footer a {
+        width: 100%;
+    }
+
+    figcaption {
+        width: 90%;
+    }
 }
 
 /* Rating */
 
 /* Step indicator */
+
+nav + nav {
+    display: flex;
+    flex-direction: column;
+    border: 0;
+}
+
+nav + nav h1 {
+    font-size: 2rem;
+}
+
+ol {
+    max-width: 100%;
+    padding: 0;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+ol li {
+    margin-right: 3rem;
+    list-style: none;
+}
+
+ol [aria-label="Address, current step"] {
+    color: var(--textSecondary);
+    opacity: 0.5;
+}
+
+@media all and (max-width: 49.125rem /* 786px */) {
+    ol li {
+        margin-right: 1rem;
+    }
+}
+
+
+ol li:last-child {
+    margin-right: 0;
+}
+
+progress {
+    width: 100vw;
+}
+
+progress:not([value]) {
+    /* Styling here */
+}
+
+progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: .125rem;
+}
+
+progress[value]::-webkit-progress-value {
+    background-color: var(--brandPrimary);
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: var(--borderColor);
+}
