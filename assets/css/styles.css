@@ -31,7 +31,7 @@
 
 body {
     padding: 0;
-    margin: 0;
+    margin: 3.5rem 0;
     font-family: var(--fontPrimary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -218,7 +218,12 @@ form button {
 
 nav {
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     border-bottom: 1px solid var(--borderColor);
+    background-color: #ffffff;
 }
 
 nav h2 {
@@ -230,16 +235,12 @@ nav ul {
     display: flex;
     align-items: center;
     padding-left: 1rem;
+    background: #fff;
 }
 
 nav section {
     width: 100%;
     grid-template-columns: 1fr 1fr;
-}
-
-nav section > ul:focus-within {
-    box-shadow: 0 0 0 100vw rgba(0,0,0,0.3);
-    z-index: 900;
 }
 
 ul li {
@@ -283,11 +284,11 @@ nav section > ul > li:last-child a:focus {
 }
 
 ul li:hover ul, li:focus-within ul {
-    display: flex;
+    top: 3.5rem;
 }
 
 ul ul {
-    display: none;
+    display: flex;
     position: absolute;
     background-color: #ffffff;
     flex-direction: column;
@@ -298,9 +299,13 @@ ul ul {
     border-bottom-right-radius: var(--borderRadius);
 
     border-top: none;
-    top: 3.5rem;
+    top: -5.125rem;
+    /*top: 3.5rem;*/
     left: -1.5rem;
     padding: 0.5rem 1.5rem 1rem 1.5rem;
+    z-index: -1;
+    transform: translateZ(0);
+    transition: top cubic-bezier(.38,1,.51,.97) 0.3s;
 }
 
 ul li ul li {
@@ -466,6 +471,7 @@ nav + nav {
     display: flex;
     flex-direction: column;
     border: 0;
+    position: static;
 }
 
 nav + nav h1 {
