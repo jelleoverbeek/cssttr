@@ -256,6 +256,14 @@ ul li a {
     transition: var(--animationSettings);
 }
 
+nav section > ul > li:first-child {
+    opacity: 0;
+}
+
+nav section > ul > li:focus-within {
+    opacity: 1;
+}
+
 ul li:first-child {
     margin-left: 0;
 }
