@@ -1,19 +1,344 @@
-/* Color settings, font settings */
-@import "components/variables.css";
-@import "components/fonts.css";
+/* Variables and fonts */
 
-/* Common css styles */
-@import "components/base.css";
-@import "components/forms.css";
+@font-face {
+    font-family: Ampersand;
+    src: url('../../fonts/SpectralSC-SemiBold.ttf') format("truetype"),
+    local('Baskerville'),
+    local('Goudy Old Style');
+    unicode-range: U+26;
+}
+
+:root {
+    --brandPrimary: #BF8E22;
+    --brandPrimaryLight: rgba(165, 120, 33, 0.4);
+    --brandPrimaryDarken: #a57821;
+    --textPrimary: #000000;
+    --textSecondary: #8D8D8D;
+    --borderColor: #F0F0F0;
+    --borderRadius: 3px;
+    --focusShadow: 0 0.1875rem 0.25rem 0 rgba(0,0,0,0.03);
+    --fontPrimary: 'Source Sans Pro', sans-serif;
+    --fontSecondary: Ampersand, 'Cardo', serif;
+    --gutterWidth: 2rem; /* 32px */
+}
+
+/* Common CSS styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--fontPrimary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    transition: 0.2s ease-in-out filter;
+}
+
+[aria-label="blurred"] {
+    filter: blur(5px);
+}
+
+h1 {
+    font-family: var(--fontSecondary);
+    font-size: 2.5rem;
+    grid-column: 1 / -1;
+    margin: 2.5rem 0 0 0;
+    text-align: center;
+    font-weight: normal;
+}
+
+h2 {
+    font-family: var(--fontSecondary);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+h3 {
+    font-family: var(--fontSecondary);
+    font-size: 1.25rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+p {
+    color: var(--textSecondary);
+    letter-spacing: 0;
+    line-height: 1.59;
+}
+
+a {
+    color: var(--brandPrimary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--brandPrimaryDarken);
+}
+
+a:focus {
+    outline: 0;
+}
+
+a:visited {
+
+}
+
+/* Form styles */
+
+label {
+    font-weight: 600;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    height: 2.6rem;
+    padding: 0 0.5rem;
+    font-size: 1rem;
+    box-shadow: none;
+    border: 1px solid rgb(80%, 80%, 80%);
+    border-radius: var(--borderRadius);
+}
+
+input:focus {
+    border: 1px solid var(--brandPrimary);
+    outline: 0;
+}
+
+input[type="submit"], button {
+    height: 3rem;
+    border: 0;
+    border-radius: var(--borderRadius);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: var(--brandPrimary);
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: var(--brandPrimaryDarken);
+}
 
 /* Grid */
-@import "components/grid.css";
 
-/* Other components */
-@import "components/chat.css";
-@import "components/login.css";
-@import "components/media-item.css";
-@import "components/navigation.css";
-@import "components/picture-with-subtitle.css";
-@import "components/rating.css";
-@import "components/step-indicator.css";
+section {
+    max-width: 64rem;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+@media all and (min-width: 49.125rem /* 786px */) {
+    section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: var(--gutterWidth);
+    }
+}
+
+@media all and (min-width: 80rem /* 1280px */) {
+    section {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+}
+
+/* Chat */
+
+/* login */
+
+div form {
+    width: 30rem;
+    background-color: #ffffff;
+    padding: 4rem;
+    border-radius: var(--borderRadius);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 100vw rgba(0,0,0,0.3);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.8rem;
+}
+
+div label, div input {
+    grid-column: span 2;
+}
+
+div input[type="checkbox"] {
+    grid-column: 1 / -1;
+}
+
+
+div input[type="checkbox"] + label {
+    grid-column: 1 / -1;
+}
+
+div a {
+    text-align: right;
+}
+
+div button {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+}
+
+/* Navigation */
+
+nav {
+    display: flex;
+    border-bottom: 1px solid var(--borderColor);
+}
+
+nav h2 {
+    align-self: center;
+}
+
+nav ul {
+    margin: 0 0 0 auto;
+}
+
+nav section {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+}
+
+nav section > ul:focus-within {
+    box-shadow: 0 0 0 100vw rgba(0,0,0,0.3);
+    z-index: 900;
+}
+
+ul li {
+    position: relative;
+    margin-left: 2rem;
+}
+
+ul li a {
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: ease-in-out 0.1s all;
+}
+
+ul li:first-child {
+    margin-left: 0;
+}
+
+ul li a[aria-label="Home, current page"] {
+    border-bottom: 2px solid var(--brandPrimary);
+}
+
+ul li a:hover, ul li a:focus {
+    border-color: var(--brandPrimaryLight);
+}
+
+nav section > ul > li:last-child a {
+    background-color: var(--brandPrimary);
+    color: #ffffff;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+
+nav section > ul > li:last-child a:focus {
+    background-color: var(--brandPrimaryDarken);
+}
+
+ul li:hover ul, li:focus-within ul {
+    display: flex;
+}
+
+ul ul {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: var(--focusShadow);
+    flex-direction: column;
+    align-items: flex-start;
+
+    border: 1px solid var(--borderColor);
+    border-bottom-left-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+
+    border-top: none;
+    top: 3.5rem;
+    left: -1.5rem;
+    padding: 0.5rem 1.5rem 1rem 1.5rem;
+}
+
+ul li ul li {
+    margin-left: 0;
+    width: 100%;
+}
+
+ul li ul li a {
+    height: auto;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+/* Media-item */
+
+article {
+    border-radius: var(--borderRadius);
+    border: 1px solid var(--borderColor);
+    padding: 1.5rem 2.5rem;
+    text-align: center;
+    transition: ease-in-out all 0.2s;
+}
+
+article img {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+article p {
+    text-align: left;
+    height: 5rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+article:focus-within {
+    border-color: var(--brandPrimary);
+    box-shadow: 0 2px 15px 0 rgba(0,0,0,0.05);
+    transform: scale(1.025);
+}
+
+/* picture with subtitle */
+
+figure {
+    max-width: max-content;
+    margin: 0 auto;
+}
+
+figure img {
+    width: 25rem;
+    margin: 1rem 0;
+}
+
+article figcaption {
+    width: 100%;
+}
+
+/* Rating */
+
+/* Step indicator */
