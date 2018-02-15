@@ -20,8 +20,12 @@
     --fontPrimary: 'Source Sans Pro', sans-serif;
     --fontSecondary: Ampersand, 'Cardo', serif;
     --animationSettings: all cubic-bezier(0.5, 2.44, 0.6, 1.06) .25s;
-    --gutterWidth: 2rem; /* 32px */
+    --gutterWidth: 2rem; /* 3.125rem */
 }
+
+/* Animations */
+
+
 
 /* Common CSS styles */
 
@@ -106,7 +110,7 @@ ul {
 }
 
 [aria-label="blurred"] {
-    filter: blur(5px);
+    filter: blur(.3125rem);
 }
 
 /* Form styles */
@@ -121,9 +125,34 @@ input[type="email"],
 textarea {
     height: 2.6rem;
     padding: 0 0.5rem;
-    font-size: 1rem;
-    border: 1px solid rgb(80%, 80%, 80%);
+    font-size: 0.9rem;
+    border: .0625rem solid rgb(80%, 80%, 80%);
     border-radius: var(--borderRadius);
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-1rem);
+    }
+    50% {
+        transform: translateX(1rem);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+input[type="text"]:invalid,
+input[type="password"]:invalid,
+input[type="email"]:invalid {
+    border: .0625rem solid #d60000;
+    background-color: rgba(214, 0, 0, 0.02);
+    animation-name: shake;
+    animation-duration: .4s;
+    animation-timing-function: var(--animationSettings);
 }
 
 textarea {
@@ -137,16 +166,15 @@ input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 textarea {
-    border: 1px solid var(--brandPrimary);
+    border: .0625rem solid var(--brandPrimary);
     outline: 0;
 }
-
 
 input[type="submit"],
 button,
 [role="button"] {
     display: flex;
-    border: 1px solid rgba(191,142,34,0.25);
+    border: .0625rem solid rgba(191,142,34,0.25);
     justify-content: center;
     height: 3rem;
     padding: 0 1.5rem;
@@ -165,7 +193,7 @@ button:focus,
 [role="button"]:hover,
 [role="button"]:focus {
     background: rgba(191,142,34,0.05);
-    border: 1px solid rgba(191,142,34,1);
+    border: .0625rem solid rgba(191,142,34,1);
     animation-name: bounce;
     animation-duration: .3s;
     text-decoration: none;
@@ -177,7 +205,7 @@ input[type="submit"]:active,
 button:active,
 [role="button"]:active {
     background: rgba(191,142,34,0.2);
-    border: 1px solid rgba(191,142,34,1);
+    border: .0625rem solid rgba(191,142,34,1);
 }
 
 form input[type="submit"],
@@ -209,7 +237,7 @@ input[type="checkbox"] + label {
 
 input[type="checkbox"] + label::before {
     margin-right: 0.5rem;
-    border: 2px solid var(--brandPrimary);
+    border: .125rem solid var(--brandPrimary);
     background-color: #fff;
     content: " ";
     width: 1.15rem;
@@ -226,7 +254,6 @@ input[type="checkbox"]:checked + label::before {
     background: url("../img/checkmark.svg") no-repeat 50% 50%;
     background-size: 100% 100%;
 }
-
 
 
 /* Grid */
@@ -305,8 +332,8 @@ aside ol {
 }
 
 aside ol, aside form {
-    border-left: 1px solid var(--borderColor);
-    border-right: 1px solid var(--borderColor);
+    border-left: .0625rem solid var(--borderColor);
+    border-right: .0625rem solid var(--borderColor);
 }
 
 aside ol li {
@@ -400,7 +427,7 @@ nav {
     left: 0;
     right: 0;
     z-index: 10;
-    border-bottom: 1px solid var(--borderColor);
+    border-bottom: .0625rem solid var(--borderColor);
     background-color: #ffffff;
 }
 
@@ -430,7 +457,7 @@ ul li a {
     height: 3.5rem;
     display: flex;
     align-items: center;
-    border-bottom: 2px solid transparent;
+    border-bottom: .125rem solid transparent;
     transition: var(--animationSettings);
 }
 
@@ -447,7 +474,7 @@ ul li:first-child {
 }
 
 ul li a[aria-label="Home, current page"] {
-    border-bottom: 2px solid var(--brandPrimary);
+    border-bottom: .125rem solid var(--brandPrimary);
 }
 
 ul li a:hover, ul li a:focus {
@@ -480,7 +507,7 @@ ul ul {
     flex-direction: column;
     align-items: flex-start;
 
-    border: 1px solid var(--borderColor);
+    border: .0625rem solid var(--borderColor);
     border-bottom-left-radius: var(--borderRadius);
     border-bottom-right-radius: var(--borderRadius);
 
@@ -545,7 +572,7 @@ ul li ul li a {
 
 section article {
     border-radius: var(--borderRadius);
-    border: 1px solid var(--borderColor);
+    border: .0625rem solid var(--borderColor);
     padding: 1.5rem 2.5rem;
     text-align: center;
     transition: var(--animationSettings);
@@ -571,7 +598,7 @@ section article a:focus {
 
 section article:focus-within {
     border-color: var(--brandPrimary);
-    box-shadow: 0 2px 15px 0 rgba(0,0,0,0.05);
+    box-shadow: 0 .125rem 1rem 0 rgba(0,0,0,0.05);
     transform: scale(1.025);
 }
 
@@ -675,8 +702,8 @@ fieldset label {
 
 fieldset input[type="radio"] {
     opacity: 0;
-    width: 1px;
-    height: 1px;
+    width: .0625rem;
+    height: .0625rem;
 }
 
 fieldset input[type="radio"]:focus + label path {
@@ -760,6 +787,7 @@ progress[value]::-webkit-progress-bar {
 }
 
 /* Preloader */
+/* Not using em/rems here because the sprite is in pixels too, it could cause bugs */
 @keyframes loader {
     to { background-position: -250px 0; }
 }
