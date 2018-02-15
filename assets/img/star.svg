@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="32px" viewBox="0 0 34 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Star</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="12 17.4 4.94657697 21.7082039 6.86429481 13.6686918 0.587321804 8.29179607 8.82595964 7.63130823 12 0 15.1740404 7.63130823 23.4126782 8.29179607 17.1357052 13.6686918 19.053423 21.7082039"></polygon>
+    </defs>
+    <g id="Desktop-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-563.000000, -269.000000)">
+        <g id="Group-4" transform="translate(568.000000, 275.000000)">
+            <g id="Star">
+                <use fill="#BF8E22" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <path stroke="#FFFFFF" stroke-width="2" d="M12,18.5717815 L3.41600828,23.814851 L5.74986434,14.0307922 L-1.88919036,7.48712849 L8.13720373,6.68331705 L12,-2.60395899 L15.8627963,6.68331705 L25.8891904,7.48712849 L18.2501357,14.0307922 L20.5839917,23.814851 L12,18.5717815 Z"></path>
+            </g>
+        </g>
+    </g>
+</svg>
