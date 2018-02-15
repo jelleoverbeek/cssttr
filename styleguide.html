@@ -14,6 +14,54 @@
 
 <!-- place components or patterns here -->
 
+
+<!-- Navigation -->
+<nav>
+    <section>
+        <h2>Waytch & Co</h2>
+        <ul>
+            <li><a href="#content">Skip to content</a></li>
+            <li><a href="index.html" aria-label="Home, current page">Home</a></li>
+            <li>
+                <a href="/products">Products</a>
+
+                <ul>
+                    <li><a href="/products/rock">Watches</a></li>
+                    <li><a href="/products/paper">Wristbands</a></li>
+                    <li><a href="/products/scissors">Smartwatches</a></li>
+                </ul>
+
+            </li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </section>
+</nav>
+<!--Step indicator-->
+<nav>
+
+    <progress value="0.25" max="1">25%</progress>
+
+    <h1>Finish your order</h1>
+
+    <ol>
+        <li>
+            <a href="/cart">Cart</a>
+        </li>
+        <li>
+            <a href="#main-content" aria-label="Address, current step">Address</a>
+        </li>
+        <li>
+            Payment
+        </li>
+        <li>
+            Confirm
+        </li>
+    </ol>
+
+</nav>
+
 <!--Chat-->
 <aside>
     <ol>
@@ -201,54 +249,6 @@
 
 </fieldset>
 
-
-<!-- Navigation -->
-<nav>
-    <section>
-        <h2>Waytch & Co</h2>
-        <ul>
-            <li><a href="#content">Skip to content</a></li>
-            <li><a href="#main-content" aria-label="Home, current page">Home</a></li>
-            <li>
-                <a href="/products">Products</a>
-
-                <ul>
-                    <li><a href="/products/rock">Watches</a></li>
-                    <li><a href="/products/paper">Wristbands</a></li>
-                    <li><a href="/products/scissors">Smartwatches</a></li>
-                </ul>
-
-            </li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </section>
-</nav>
-<!--Step indicator-->
-<nav>
-
-    <progress value="0.25" max="1">25%</progress>
-
-    <h1>Finish your order</h1>
-
-    <ol>
-        <li>
-            <a href="/cart">Cart</a>
-        </li>
-        <li>
-            <a href="#main-content" aria-label="Address, current step">Address</a>
-        </li>
-        <li>
-            Payment
-        </li>
-        <li>
-            Confirm
-        </li>
-    </ol>
-
-</nav>
-
 <!--Login-->
 <form action="/" method="post">
 
@@ -269,6 +269,8 @@
 
 </form>
 
+<!-- Preloader -->
+<div class="loader"></div>
 
 </body>
 </html>
