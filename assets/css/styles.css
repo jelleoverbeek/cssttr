@@ -25,7 +25,47 @@
 
 /* Animations */
 
+@keyframes animateIn {
+    0% {
+        transform: translateY(100%);
+    }
 
+    100% {
+        transform: translateY(calc(100% - 2.5rem));
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-1rem);
+    }
+    50% {
+        transform: translateX(1rem);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Not using em/rems here because the sprite is in pixels too, it could cause bugs */
+@keyframes loader {
+    to { background-position: -250px 0; }
+}
 
 /* Common CSS styles */
 
@@ -79,19 +119,6 @@ a {
     text-decoration: none;
 }
 
-
-@keyframes bounce {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
 a:hover {
     color: var(--brandPrimaryDarken);
 }
@@ -128,21 +155,6 @@ textarea {
     font-size: 0.9rem;
     border: .0625rem solid rgb(80%, 80%, 80%);
     border-radius: var(--borderRadius);
-}
-
-@keyframes shake {
-    0% {
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(-1rem);
-    }
-    50% {
-        transform: translateX(1rem);
-    }
-    100% {
-        transform: translateX(0);
-    }
 }
 
 input[type="text"]:invalid,
@@ -281,16 +293,6 @@ section {
 }
 
 /* Chat */
-
-@keyframes animateIn {
-    0% {
-        transform: translateY(100%);
-    }
-
-    100% {
-        transform: translateY(calc(100% - 2.5rem));
-    }
-}
 
 aside {
     max-width: 20rem;
@@ -788,10 +790,6 @@ progress[value]::-webkit-progress-bar {
 
 /* Preloader */
 /* Not using em/rems here because the sprite is in pixels too, it could cause bugs */
-@keyframes loader {
-    to { background-position: -250px 0; }
-}
-
 .loader {
     margin: 0 auto;
     width: 50px; height: 50px;
