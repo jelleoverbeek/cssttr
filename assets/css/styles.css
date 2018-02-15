@@ -16,7 +16,7 @@
     --textSecondary: #8D8D8D;
     --borderColor: #F0F0F0;
     --borderRadius: 3px;
-    --focusShadow: 0 0.1875rem 0.25rem 0 rgba(0,0,0,0.03);
+    --boxShadow: 0 0.1875rem 0.25rem 0 rgba(0,0,0,0.03);
     --fontPrimary: 'Source Sans Pro', sans-serif;
     --fontSecondary: Ampersand, 'Cardo', serif;
     --animationSettings: all cubic-bezier(0.5, 2.44, 0.6, 1.06) .25s;
@@ -118,7 +118,8 @@ label, legend {
 
 input[type="text"],
 input[type="password"],
-input[type="email"] {
+input[type="email"],
+textarea {
     height: 2.6rem;
     padding: 0 0.5rem;
     font-size: 1rem;
@@ -126,9 +127,17 @@ input[type="email"] {
     border-radius: var(--borderRadius);
 }
 
+textarea {
+    padding: 0.75rem;
+    height: 5.2rem;
+    font-size:0.85rem;
+    resize: none;
+}
+
 input[type="text"]:focus,
 input[type="password"]:focus,
-input[type="email"]:focus {
+input[type="email"]:focus,
+textarea {
     border: 1px solid var(--brandPrimary);
     outline: 0;
 }
@@ -215,10 +224,90 @@ section {
 
 /* Chat */
 
+@keyframes animateIn {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(calc(100% - 2.5rem));
+    }
+}
+
+aside {
+    max-width: 20rem;
+    position: fixed;
+    bottom: 0;
+    right: 2.5rem;
+    background: #fff;
+    z-index: 10;
+    transform: translateY(calc(100% - 2.5rem));
+
+    padding-bottom: 2rem;
+    border-top-left-radius: var(--borderRadius);
+    border-top-right-radius: var(--borderRadius);
+    overflow: hidden;
+    box-shadow: var(--boxShadow);
+    transition: transform cubic-bezier(.38,1,.51,.97) 1s;
+
+    animation-name: animateIn;
+    animation-duration: .5s;
+}
+
+aside:hover, aside:focus-within {
+    transform: translateY(1rem);
+}
+
+aside:before {
+    content: "Chat";
+    background-color: var(--brandPrimary);
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    padding: 0.75rem;
+}
+
+aside ol {
+    flex-direction: column;
+    padding: 1rem 2rem;
+    margin: 0;
+}
+
+aside ol, aside form {
+    border-left: 1px solid var(--borderColor);
+    border-right: 1px solid var(--borderColor);
+}
+
+aside ol li {
+    margin-right: 0;
+    margin-top: 2rem;
+}
+
+aside ol li:first-child {
+    margin-top: 0rem;
+}
+
+aside li:nth-child(even) {
+    text-align: right;
+}
+
+aside li footer {
+    font-size: .6875rem;
+}
+
+aside li > p {
+    color: var(--textPrimary);
+    margin: 0;
+}
+
+aside li footer p {
+    margin: 0;
+}
+
 /* login */
 
 form {
-    max-width: 100%;
+    max-width: 30rem;
     margin: 0 auto;
     background-color: #ffffff;
     padding: 1rem 2rem;
@@ -240,8 +329,7 @@ div form {
 }
 
 @media all and (min-width: 49.125rem /* 786px */) {
-    form {
-        max-width: 30rem;
+    div form {
         padding: 2rem 4rem;
     }
 
@@ -250,7 +338,7 @@ div form {
     }
 }
 
-form label, form input {
+form label, form input, form textarea {
     grid-column: span 2;
 }
 
