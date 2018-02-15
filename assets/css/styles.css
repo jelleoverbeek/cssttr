@@ -601,6 +601,7 @@ figure {
     margin: 0 auto;
     display: flex;
     align-items: center;
+    max-width: max-content;
 }
 
 figure img {
