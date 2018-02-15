@@ -12,9 +12,263 @@
 </head>
 <body>
 
-<h1>Living Styleguide</h1>
-
 <!-- place components or patterns here -->
+
+<!--Chat-->
+<aside>
+    <ol>
+        <li>
+
+            <p>
+                Hey!
+            </p>
+
+            <footer>
+                <p>Posted on <time datatime="2015-01-22T10:25">10:25 AM</time> by you</p>
+                <p data-status="READ">Has been read</p>
+            </footer>
+
+        </li>
+        <li>
+
+            <p>
+                Hey! Sorry I was busy
+            </p>
+
+            <footer>
+                <p>Posted on <time datatime="2017-02-03T14:19">2:19 PM</time> by John</p>
+            </footer>
+
+        </li>
+        <li>
+
+            <p>
+                I sent that 2 years ago
+            </p>
+
+            <footer>
+                <p>Posted on <time datatime="2017-02-03T14:22">2:22 PM</time> by you</p>
+                <p data-status="DELIVERED">Has been delivered</p>
+            </footer>
+
+        </li>
+    </ol>
+
+    <form action="/" method="post">
+
+        <label for="field-message">Message</label>
+        <textarea name="field-message" id="field-message"></textarea>
+
+        <button type="submit">Send</button>
+
+    </form>
+</aside>
+
+<!-- Watches -->
+<section>
+    <h1>Watches</h1>
+    <article>
+        <h3><a href="/">CLASSIC - 36MM</a></h3>
+        <img src="assets/img/watch.png" srcset="assets/img/watch.png 1x, assets/img/watch@2x.png 2x" alt="A colorful crayon drawing on the hood of a car." />
+        <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs, this was forbidden in previous versions of HTML. A recent article by @feather concludes that the inclusion of block level elements inside a link causes some Assistive Technology (AT) to misbehave.</p>
+    </article>
+
+    <article>
+        <h3><a href="/">CLASSIC - 36MM</a></h3>
+        <img src="assets/img/watch.png" srcset="assets/img/watch.png 1x, assets/img/watch@2x.png 2x" alt="A colorful crayon drawing on the hood of a car." />
+        <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs, this was forbidden in previous versions of HTML. A recent article by @feather concludes that the inclusion of block level elements inside a link causes some Assistive Technology (AT) to misbehave.</p>
+    </article>
+
+    <article>
+        <h3><a href="/">CLASSIC - 36MM</a></h3>
+        <img src="assets/img/watch.png" srcset="assets/img/watch.png 1x, assets/img/watch@2x.png 2x" alt="A colorful crayon drawing on the hood of a car." />
+        <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs, this was forbidden in previous versions of HTML. A recent article by @feather concludes that the inclusion of block level elements inside a link causes some Assistive Technology (AT) to misbehave.</p>
+    </article>
+</section>
+
+<!-- ~Picture with subtitle -->
+<article>
+    <figure>
+        <!-- Portrait -->
+        <img src="assets/img/watch.png" srcset="assets/img/watch.png 1x, assets/img/watch@2x.png 2x" alt="Watch" />
+
+        <!-- Landscape -->
+        <!-- <img src="https://vasilis.nl/voto/fotos/klein/161001174911-verhuizen-1280.jpg" alt="A bulldozer transporting a beach house along a sunny beach" /> -->
+        <figcaption>
+            <h1>Classic - 36MM</h1>
+            <span>€150,-</span>
+
+            <p>
+                The Classic Reading from the flagship Classic collection has been designed for simplicity and effortless elegance, and features a black crocodile leather band, an eggshell white dial and an ultra-thin 6mm case. Whether you are attending a formal event, playing a game of tennis or enjoying a sunny day at the country club â€“ Daniel Wellington makes for a beautiful companion.
+            </p>
+            <footer>
+                <a href="order.html" id="content" role="button">In shopping bag</a>
+            </footer>
+        </figcaption>
+    </figure>
+</article>
+
+<!--Rating -->
+<fieldset>
+    <legend>How many stars would you give your watch?</legend>
+
+    <div>
+
+        <input type="radio" name="rating" id="1-star" checked>
+        <label for="1-star" id="content">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg width="34px" height="32px" viewBox="0 0 34 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                <title>Star</title>
+                <desc>Created with Sketch.</desc>
+                <defs>
+                    <polygon id="path-1" points="12 17.4 4.94657697 21.7082039 6.86429481 13.6686918 0.587321804 8.29179607 8.82595964 7.63130823 12 0 15.1740404 7.63130823 23.4126782 8.29179607 17.1357052 13.6686918 19.053423 21.7082039"></polygon>
+                </defs>
+                <g id="Desktop-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-563.000000, -269.000000)">
+                    <g id="Group-4" transform="translate(568.000000, 275.000000)">
+                        <g id="Star">
+                            <use fill="#BF8E22" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <path stroke="#FFFFFF" stroke-width="2" d="M12,18.5717815 L3.41600828,23.814851 L5.74986434,14.0307922 L-1.88919036,7.48712849 L8.13720373,6.68331705 L12,-2.60395899 L15.8627963,6.68331705 L25.8891904,7.48712849 L18.2501357,14.0307922 L20.5839917,23.814851 L12,18.5717815 Z"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </label>
+
+        <input type="radio" name="rating" id="2-stars">
+        <label for="2-stars">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg width="34px" height="32px" viewBox="0 0 34 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                <title>Star</title>
+                <desc>Created with Sketch.</desc>
+                <defs>
+                    <polygon id="path-1" points="12 17.4 4.94657697 21.7082039 6.86429481 13.6686918 0.587321804 8.29179607 8.82595964 7.63130823 12 0 15.1740404 7.63130823 23.4126782 8.29179607 17.1357052 13.6686918 19.053423 21.7082039"></polygon>
+                </defs>
+                <g id="Desktop-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-563.000000, -269.000000)">
+                    <g id="Group-4" transform="translate(568.000000, 275.000000)">
+                        <g id="Star">
+                            <use fill="#BF8E22" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <path stroke="#FFFFFF" stroke-width="2" d="M12,18.5717815 L3.41600828,23.814851 L5.74986434,14.0307922 L-1.88919036,7.48712849 L8.13720373,6.68331705 L12,-2.60395899 L15.8627963,6.68331705 L25.8891904,7.48712849 L18.2501357,14.0307922 L20.5839917,23.814851 L12,18.5717815 Z"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </label>
+
+        <input type="radio" name="rating" id="3-stars">
+        <label for="3-stars">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg width="34px" height="32px" viewBox="0 0 34 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                <title>Star</title>
+                <desc>Created with Sketch.</desc>
+                <defs>
+                    <polygon id="path-1" points="12 17.4 4.94657697 21.7082039 6.86429481 13.6686918 0.587321804 8.29179607 8.82595964 7.63130823 12 0 15.1740404 7.63130823 23.4126782 8.29179607 17.1357052 13.6686918 19.053423 21.7082039"></polygon>
+                </defs>
+                <g id="Desktop-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-563.000000, -269.000000)">
+                    <g id="Group-4" transform="translate(568.000000, 275.000000)">
+                        <g id="Star">
+                            <use fill="#BF8E22" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <path stroke="#FFFFFF" stroke-width="2" d="M12,18.5717815 L3.41600828,23.814851 L5.74986434,14.0307922 L-1.88919036,7.48712849 L8.13720373,6.68331705 L12,-2.60395899 L15.8627963,6.68331705 L25.8891904,7.48712849 L18.2501357,14.0307922 L20.5839917,23.814851 L12,18.5717815 Z"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </label>
+
+        <input type="radio" name="rating" id="4-stars">
+        <label for="4-stars">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg width="34px" height="32px" viewBox="0 0 34 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                <title>Star</title>
+                <desc>Created with Sketch.</desc>
+                <defs>
+                    <polygon id="path-1" points="12 17.4 4.94657697 21.7082039 6.86429481 13.6686918 0.587321804 8.29179607 8.82595964 7.63130823 12 0 15.1740404 7.63130823 23.4126782 8.29179607 17.1357052 13.6686918 19.053423 21.7082039"></polygon>
+                </defs>
+                <g id="Desktop-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-563.000000, -269.000000)">
+                    <g id="Group-4" transform="translate(568.000000, 275.000000)">
+                        <g id="Star">
+                            <use fill="#BF8E22" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <path stroke="#FFFFFF" stroke-width="2" d="M12,18.5717815 L3.41600828,23.814851 L5.74986434,14.0307922 L-1.88919036,7.48712849 L8.13720373,6.68331705 L12,-2.60395899 L15.8627963,6.68331705 L25.8891904,7.48712849 L18.2501357,14.0307922 L20.5839917,23.814851 L12,18.5717815 Z"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </label>
+    </div>
+
+</fieldset>
+
+
+<!-- Navigation -->
+<nav>
+    <section>
+        <h2>Waytch & Co</h2>
+        <ul>
+            <li><a href="#content">Skip to content</a></li>
+            <li><a href="#main-content" aria-label="Home, current page">Home</a></li>
+            <li>
+                <a href="/products">Products</a>
+
+                <ul>
+                    <li><a href="/products/rock">Watches</a></li>
+                    <li><a href="/products/paper">Wristbands</a></li>
+                    <li><a href="/products/scissors">Smartwatches</a></li>
+                </ul>
+
+            </li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </section>
+</nav>
+<!--Step indicator-->
+<nav>
+
+    <progress value="0.25" max="1">25%</progress>
+
+    <h1>Finish your order</h1>
+
+    <ol>
+        <li>
+            <a href="/cart">Cart</a>
+        </li>
+        <li>
+            <a href="#main-content" aria-label="Address, current step">Address</a>
+        </li>
+        <li>
+            Payment
+        </li>
+        <li>
+            Confirm
+        </li>
+    </ol>
+
+</nav>
+
+<!--Login-->
+<form action="/" method="post">
+
+    <label for="field-email">Email</label>
+    <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
+
+    <label for="field-password">Password</label>
+    <input type="password" id="field-password" name="field-password" required>
+
+    <span>
+        <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
+        <label for="field-stay-logged-in">Stay logged in</label>
+    </span>
+
+    <a href="/">Forgot password</a>
+
+    <button type="submit">Login</button>
+
+</form>
+
 
 </body>
 </html>
