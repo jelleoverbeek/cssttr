@@ -171,6 +171,7 @@ button:focus,
     animation-duration: .3s;
     text-decoration: none;
     outline: 0;
+    cursor: pointer;
 }
 
 input[type="submit"]:active,
@@ -196,6 +197,37 @@ form button:focus,
 form [role="button"]:focus {
     background-color: var(--brandPrimaryDarken);
 }
+
+input[type="checkbox"] {
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
+
+input[type="checkbox"] + label {
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] + label::before {
+    margin-right: 0.5rem;
+    border: 2px solid var(--brandPrimary);
+    background-color: #fff;
+    content: " ";
+    width: 1.15rem;
+    height: 1.15rem;
+    display: inline-block;
+    border-radius: var(--borderRadius);
+}
+
+input[type="checkbox"]:focus + label::before {
+    box-shadow: 0 0 .125rem .125rem var(--brandPrimaryLight);
+}
+
+input[type="checkbox"]:checked + label::before {
+    background: url("../img/checkmark.svg") no-repeat 50% 50%;
+    background-size: 100% 100%;
+}
+
 
 
 /* Grid */
