@@ -2,9 +2,11 @@
 Contains some Chrome only css
 https://jelleoverbeek.github.io/cssttr/
 
-Working pages:
+Pages:
 * index: https://jelleoverbeek.github.io/cssttr/index.html
 * login: https://jelleoverbeek.github.io/cssttr/login.html
+* Product: https://jelleoverbeek.github.io/cssttr/product.html
+* Rate a product (for example when clicking on a link in an email): https://jelleoverbeek.github.io/cssttr/rate-product.html
 
 # Components
 
