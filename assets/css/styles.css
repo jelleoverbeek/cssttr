@@ -14,9 +14,10 @@
     --brandPrimaryDarken: #a57821;
     --textPrimary: #000000;
     --textSecondary: #8D8D8D;
-    --borderColor: #F0F0F0;
-    --borderRadius: 3px;
+    --borderColor: #e2e2e2;
+    --borderRadius: .1875rem;
     --boxShadow: 0 0.1875rem 0.25rem 0 rgba(0,0,0,0.03);
+    --focusShadow: 0 0 .125rem .125rem rgba(165, 120, 33, 0.3);
     --fontPrimary: 'Source Sans Pro', sans-serif;
     --fontSecondary: Ampersand, 'Cardo', serif;
     --animationSettings: all cubic-bezier(0.5, 2.44, 0.6, 1.06) .25s;
@@ -57,6 +58,9 @@
     50% {
         transform: translateX(1rem);
     }
+    75% {
+        transform: translateX(-1rem);
+    }
     100% {
         transform: translateX(0);
     }
@@ -81,7 +85,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-@media all and (max-width: 49.125rem /* 786px */) {
+@media all and (max-width: 49rem) {
     body {
         margin: 7.5rem 0 0 0;
     }
@@ -157,11 +161,15 @@ textarea {
     border-radius: var(--borderRadius);
 }
 
+input:focus {
+    box-shadow: var(--focusShadow);
+}
+
 input[type="text"]:invalid,
 input[type="password"]:invalid,
 input[type="email"]:invalid {
-    border: .0625rem solid #d60000;
-    background-color: rgba(214, 0, 0, 0.02);
+    border: .0625rem solid #dd0000;
+    background-color: rgba(214, 0, 0, 0.04);
     animation-name: shake;
     animation-duration: .4s;
     animation-timing-function: var(--animationSettings);
@@ -186,7 +194,8 @@ input[type="submit"],
 button,
 [role="button"] {
     display: flex;
-    border: .0625rem solid rgba(191,142,34,0.25);
+    border: .0625rem solid rgba(191,142,34,0.5);
+    background: rgba(191,142,34,0.05);
     justify-content: center;
     height: 3rem;
     padding: 0 1.5rem;
@@ -204,8 +213,9 @@ button:hover,
 button:focus,
 [role="button"]:hover,
 [role="button"]:focus {
-    background: rgba(191,142,34,0.05);
+    background: rgba(191,142,34,0.1);
     border: .0625rem solid rgba(191,142,34,1);
+    box-shadow: var(--focusShadow);
     animation-name: bounce;
     animation-duration: .3s;
     text-decoration: none;
@@ -259,7 +269,7 @@ input[type="checkbox"] + label::before {
 }
 
 input[type="checkbox"]:focus + label::before {
-    box-shadow: 0 0 .125rem .125rem var(--brandPrimaryLight);
+    box-shadow: var(--focusShadow);
 }
 
 input[type="checkbox"]:checked + label::before {
@@ -491,11 +501,14 @@ nav section > ul > li:last-child a {
     display: flex;
     align-items: center;
     padding: 0 1rem;
+    transition: var(--animationSettings);
 }
 
 
 nav section > ul > li:last-child a:focus {
     background-color: var(--brandPrimaryDarken);
+    box-shadow: 0 0 1rem 0.5rem rgba(165, 120, 33, 0.2);
+    padding: 0 1.2rem;
 }
 
 ul li:hover ul, li:focus-within ul {
@@ -748,11 +761,11 @@ ol {
 ol li {
     margin-right: 3rem;
     list-style: none;
+    color: var(--textSecondary);
 }
 
 ol [aria-label="Address, current step"] {
-    color: var(--textSecondary);
-    opacity: 0.5;
+    color: var(--textPrimary);
 }
 
 @media all and (max-width: 49.125rem /* 786px */) {
@@ -777,7 +790,7 @@ progress:not([value]) {
 progress[value] {
     -webkit-appearance: none;
     appearance: none;
-    height: .125rem;
+    height: .2rem;
 }
 
 progress[value]::-webkit-progress-value {
