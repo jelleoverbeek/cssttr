@@ -81,6 +81,8 @@ body {
     padding: 0;
     margin: 3.5rem 0;
     font-family: var(--fontPrimary);
+    
+    /* Improves font rendering */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -132,14 +134,11 @@ a:focus {
     text-decoration: underline;
 }
 
-a:visited {
-
-}
-
 ul {
     list-style: none;
 }
 
+/* Use this label too blur an object */
 [aria-label="blurred"] {
     filter: blur(.3125rem);
 }
@@ -148,6 +147,17 @@ ul {
 
 label, legend {
     font-weight: 600;
+}
+
+input:focus {
+    box-shadow: var(--focusShadow);
+}
+
+textarea {
+    padding: 0.75rem;
+    height: 5.2rem;
+    font-size:0.85rem;
+    resize: none;
 }
 
 input[type="text"],
@@ -161,13 +171,10 @@ textarea {
     border-radius: var(--borderRadius);
 }
 
-input:focus {
-    box-shadow: var(--focusShadow);
-}
-
 input[type="text"]:invalid,
 input[type="password"]:invalid,
-input[type="email"]:invalid {
+input[type="email"]:invalid, 
+textarea:invalid {
     border: .0625rem solid #dd0000;
     background-color: rgba(214, 0, 0, 0.04);
     animation-name: shake;
@@ -175,23 +182,15 @@ input[type="email"]:invalid {
     animation-timing-function: var(--animationSettings);
 }
 
-textarea {
-    padding: 0.75rem;
-    height: 5.2rem;
-    font-size:0.85rem;
-    resize: none;
-}
-
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
-textarea {
+textarea:focus {
     border: .0625rem solid var(--brandPrimary);
     outline: 0;
 }
 
-input[type="submit"],
-button,
+input[type="submit"], button,
 [role="button"] {
     display: flex;
     border: .0625rem solid rgba(191,142,34,0.5);
@@ -208,10 +207,10 @@ button,
 }
 
 input[type="submit"]:hover,
-input[type="submit"]:focus,
 button:hover,
-button:focus,
 [role="button"]:hover,
+input[type="submit"]:focus,
+button:focus,
 [role="button"]:focus {
     background: rgba(191,142,34,0.1);
     border: .0625rem solid rgba(191,142,34,1);
@@ -277,7 +276,6 @@ input[type="checkbox"]:checked + label::before {
     background-size: 100% 100%;
 }
 
-
 /* Grid */
 
 section {
@@ -289,7 +287,7 @@ section {
     grid-template-columns: 1fr;
 }
 
-@media all and (min-width: 49.125rem /* 786px */) {
+@media all and (min-width: 49rem /* 786px */) {
     section {
         grid-template-columns: 1fr 1fr;
     }
@@ -398,7 +396,7 @@ div form {
     padding: 2rem;
 }
 
-@media all and (min-width: 49.125rem /* 786px */) {
+@media all and (min-width: 49rem /* 786px */) {
     div form {
         padding: 2rem 4rem;
     }
@@ -504,7 +502,6 @@ nav section > ul > li:last-child a {
     transition: var(--animationSettings);
 }
 
-
 nav section > ul > li:last-child a:focus {
     background-color: var(--brandPrimaryDarken);
     box-shadow: 0 0 1rem 0.5rem rgba(165, 120, 33, 0.2);
@@ -535,6 +532,7 @@ ul ul {
     transform: translateZ(0);
     transition: top cubic-bezier(.38,1,.51,.97) 0.3s;
 }
+
 ul li ul li {
     margin-left: 0;
     width: 100%;
@@ -546,7 +544,7 @@ ul li ul li a {
     padding: 0.5rem 0;
 }
 
-@media all and (max-width: 49.125rem /* 786px */) {
+@media all and (max-width: 49rem /* 786px */) {
     nav section {
         margin-top: 1.5rem;
         grid-template-columns: 1fr;
@@ -667,7 +665,7 @@ figcaption {
     width: 60%;
 }
 
-@media all and (max-width: 49.125rem /* 786px */) {
+@media all and (max-width: 49rem /* 786px */) {
     article h1 {
         font-size: 2.3rem;
     }
@@ -725,6 +723,7 @@ fieldset input[type="radio"]:focus + label path {
     stroke: var(--brandPrimaryDarken);
 }
 
+/* This replaces the unchecked stars colors with a gray fill */
 fieldset input[type="radio"]:checked ~ label g {
     fill: var(--borderColor);
 }
@@ -768,7 +767,7 @@ ol [aria-label="Address, current step"] {
     color: var(--textPrimary);
 }
 
-@media all and (max-width: 49.125rem /* 786px */) {
+@media all and (max-width: 49rem /* 786px */) {
     ol li {
         margin-right: 1rem;
     }
