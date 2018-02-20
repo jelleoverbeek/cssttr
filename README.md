@@ -9,7 +9,8 @@ Pages:
 * index: https://jelleoverbeek.github.io/cssttr/index.html
 * login: https://jelleoverbeek.github.io/cssttr/login.html
 * Product: https://jelleoverbeek.github.io/cssttr/product.html
-* -- Only reachable by direct link -- Rate a product: https://jelleoverbeek.github.io/cssttr/rate-product.html *(users could receive this link after buying a product and using it for a while)*
+* -- Only reachable by direct link -- 
+⋅⋅* Rate a product: https://jelleoverbeek.github.io/cssttr/rate-product.html *(users could receive this link after buying a product and using it for a while)*
 * Styleguide: https://jelleoverbeek.github.io/cssttr/styleguide.html
 * CSS Secrets: https://jelleoverbeek.github.io/cssttr/csssecrets.html
 
