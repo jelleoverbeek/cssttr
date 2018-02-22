@@ -1,7 +1,7 @@
 # Introduction
 This is a school project where the goal was to style a website using other selectors then classes and id's. This way we learned a lot about all the selectors in CSS. The site should be accessible using a keyboard while maintaining a pleasurable experience.     
 
-![preview image](https://d.pr/i/sqdZuK+)
+![preview image](https://d.pr/i/x9Qzp1+)
 
 ### Demo
 Best viewed using Chrome:
