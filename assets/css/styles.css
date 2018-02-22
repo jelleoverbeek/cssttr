@@ -14,12 +14,18 @@
     --brandPrimaryDarken: #a57821;
     --textPrimary: #000000;
     --textSecondary: #8D8D8D;
-    --borderColor: #e2e2e2;
+    --borderColor: #d7d7d7;
+    /* Border radius */
     --borderRadius: .1875rem;
+    /* Subtile box shadow */
     --boxShadow: 0 0.1875rem 0.25rem 0 rgba(0,0,0,0.03);
+    /* Shadow that only should be used when focusing on an element */
     --focusShadow: 0 0 .125rem .125rem rgba(165, 120, 33, 0.3);
+    /* Primary site font (sans-serif) */
     --fontPrimary: 'Source Sans Pro', sans-serif;
+    /* Serif font with a custom Ampersand */
     --fontSecondary: Ampersand, 'Cardo', serif;
+    /* Bouncy animation  */
     --animationSettings: all cubic-bezier(0.5, 2.44, 0.6, 1.06) .25s;
     --gutterWidth: 2rem; /* 3.125rem */
 }
@@ -811,4 +817,3 @@ progress[value]::-webkit-progress-bar {
     animation: loader 1s infinite steps(5);
     animation-direction: alternate;
 }
-
